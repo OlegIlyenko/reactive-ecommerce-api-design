@@ -172,7 +172,10 @@ POST /my-shop/orders
           <h2>Characteristics</h2>
           <ul>
             <li>Change history</li>
-            <li>Much less data to transfer</li>
+            <li>
+              Much less data to transfer
+              <ul><li>Good for mobile clients</li></ul>
+            </li>
             <li>More control over the changes</li>
             <li class="fragment roll-in" data-fragment-index="1">Not very suitable for data synchronization</li>
           </ul>
@@ -182,14 +185,23 @@ POST /my-shop/orders
           <h2>Event Sourcing</h2>
 
           <img src="assets/img/es.svg">
-          <aside class="notes">
-            <ul>
-              <li>
-                Events named as fact in past like <strong>OrderCreated</strong> or <strong>NameChanged</strong>.
-              </li>
-              <li>After event is saved, all business logic is already performed</li>
-            </ul>
-          </aside>
+        </section>
+
+        <section>
+          <h2>Event Sourcing</h2>
+
+          <ul>
+            <li class="fragment roll-in" data-fragment-index="1">
+              Events represent facts from the past
+              <ul>
+                <li><strong>OrderCreated</strong></li>
+                <li><strong>ProductNameChanged</strong></li>
+              </ul>
+            </li>
+            <li class="fragment roll-in" data-fragment-index="2">After event is saved, all business logic is already performed</li>
+            <li class="fragment roll-in" data-fragment-index="3">Most normalized form of the data</li>
+            <li class="fragment roll-in" data-fragment-index="4">Point-in-time restore/view</li>
+          </ul>
         </section>
 
         <section>
@@ -232,7 +244,7 @@ POST /my-shop/orders
           <ul>
             <li class="fragment roll-in" data-fragment-index="1">
               Life beyond Distributed Transactions:
-              <ul><li><a href="http://adrianmarriott.net/logosroot/papers/LifeBeyondTxns.pdf" target="_blank">http://adrianmarriott.net/logosroot/papers/LifeBeyondTxns.pdf</a></li></ul>
+              <ul><li><a href="http://bit.ly/LifeBeyondTxns" target="_blank">http://bit.ly/LifeBeyondTxns</a></li></ul>
             </li>
             <li class="fragment roll-in" data-fragment-index="2">
               Transactional boundary - one concrete entity
@@ -314,7 +326,7 @@ data: {
               <li><strong>Twitter:</strong> <a href="https://twitter.com/easyangel" target="_blank">https://twitter.com/easyangel</a></li>
               <li><strong>CQRS:</strong> <a href="http://martinfowler.com/bliki/CQRS.html" target="_blank">http://martinfowler.com/bliki/CQRS.html</a></li>
               <li><strong>Event sourcing:</strong> <a href="http://martinfowler.com/eaaDev/EventSourcing.html" target="_blank">http://martinfowler.com/eaaDev/EventSourcing.html</a></li>
-              <li><strong>Life beyond Distributed Transactions:</strong> <a href="http://adrianmarriott.net/logosroot/papers/LifeBeyondTxns.pdf" target="_blank">http://adrianmarriott.net/logosroot/papers/LifeBeyondTxns.pdf</a></li>
+              <li><strong>Life beyond Distributed Transactions:</strong> <a href="http://bit.ly/LifeBeyondTxns" target="_blank">http://bit.ly/LifeBeyondTxns</a></li>
               <li><strong>The Reactive Manifesto:</strong> <a href="http://www.reactivemanifesto.org" target="_blank">http://www.reactivemanifesto.org</a></li>
             </ul>
         </section>
