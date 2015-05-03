@@ -260,9 +260,22 @@ POST /my-shop/orders
         </section>
 
         <section>
-          <h2>Messaging API</h2>
+          <h2>Event API</h2>
           <pre><code data-trim contenteditable class="javascript">
-TODO
+GET /my-shop/events
+
+HTTP/1.1 200 OK
+Content-Type: text/event-stream
+...
+
+id: EVENT-123
+data: {
+        "entity": "product",
+        "entityId": "PROD-56",
+        "type": "nameChanged",
+        "sequenceNumber": 10,
+        "payload": {...}
+      }
           </code></pre>
 				</section>
 
@@ -270,12 +283,21 @@ TODO
           <h2>Implementation</h2>
           <ul>
 
-            <li>SSE (Server-sent events)</li>
-            <li>WebSockets</li>
-            <li>Long-pooling</li>
-            <li class="fragment roll-in" data-fragment-index="1">
+            <li>
+              SSE (Server-sent events)
+              <ul class="fragment roll-in" data-fragment-index="1">
+                <li><strong>Last-Event-ID</strong> header</li>
+              </ul>
+            </li>
+            <li class="fragment roll-in" data-fragment-index="2">WebSockets</li>
+            <li class="fragment roll-in" data-fragment-index="3">Long-polling</li>
+            <li class="fragment roll-in" data-fragment-index="4">
               Important properties
               <ul>
+                <li>
+                  Event ID
+                  <ul><li>Can be: <strong>entityId</strong> + <strong>entityVersion</strong></li></ul>
+                </li>
                 <li>Type of entity</li>
                 <li>ID of entity</li>
                 <li>Sequence number within this entity</li>
