@@ -86,7 +86,7 @@
               <ul class="fragment roll-in" data-fragment-index="1"><li>Where to put the boundary?</li></ul>
             </li>
             <li>
-              Verbs
+              HTTP verbs
               <ul>
                 <li class="fragment roll-in" data-fragment-index="2">PUT vs POST?</li>
                 <li class="fragment roll-in" data-fragment-index="3">Semantics of POST?</li>
@@ -171,13 +171,14 @@ POST /my-shop/orders
         <section>
           <h2>Characteristics</h2>
           <ul>
-            <li>Change history</li>
-            <li>
-              Much less data to transfer
-              <ul><li>Good for mobile clients</li></ul>
+            <li class="fragment roll-in" data-fragment-index="1"><span class="good">&#8679;</span> Change history</li>
+            <li class="fragment roll-in" data-fragment-index="2">
+              <span class="good">&#8679;</span> Much less data to transfer
+              <ul class="fragment roll-in" data-fragment-index="3"><li>Good for mobile clients</li></ul>
             </li>
-            <li>More control over the changes</li>
-            <li class="fragment roll-in" data-fragment-index="1">Not very suitable for data synchronization</li>
+            <li class="fragment roll-in" data-fragment-index="4"><span class="good">&#8679;</span> More control over the changes</li>
+            <li class="fragment roll-in" data-fragment-index="5"><span class="good">&#8679;</span> Scale reads and writes separately</li>
+            <li class="fragment roll-in" data-fragment-index="6"><span class="not-so-good">&#8681;</span> Not very suitable for data synchronization</li>
           </ul>
         </section>
 
@@ -213,8 +214,9 @@ POST /my-shop/orders
         <section>
           <h2 class="smaller">Disadvantages of Event Sourcing</h2>
           <ul>
-            <li class="fragment roll-in" data-fragment-index="1">bigger database</li>
-            <li class="fragment roll-in" data-fragment-index="2">backwards compatibility of events</li>
+            <li class="fragment roll-in" data-fragment-index="1"><span class="not-so-good">&#8681;</span> Bigger database</li>
+            <li class="fragment roll-in" data-fragment-index="2"><span class="not-so-good">&#8681;</span> Events need to be backwards compatible</li>
+            <li class="fragment roll-in" data-fragment-index="2"><span class="not-so-good">&#8681;</span> Eventual consistency</li>
           </ul>
         </section>
 
@@ -309,18 +311,19 @@ data: {
             </li>
             <li class="fragment roll-in" data-fragment-index="2">WebSockets</li>
             <li class="fragment roll-in" data-fragment-index="3">Long-polling</li>
-            <li class="fragment roll-in" data-fragment-index="4">
-              Important properties
-              <ul>
-                <li>
-                  Event ID
-                  <ul><li>Can be: <strong>entityId</strong> + <strong>entityVersion</strong></li></ul>
-                </li>
-                <li>Type of entity</li>
-                <li>ID of entity</li>
-                <li>Sequence number within this entity</li>
-              </ul>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Important properties</h2>
+          <ul>
+            <li  class="fragment roll-in" data-fragment-index="1">
+              Event ID
+              <ul  class="fragment roll-in" data-fragment-index="2"><li>Can be: <strong>entityId</strong> + <strong>entityVersion</strong></li></ul>
             </li>
+            <li class="fragment roll-in" data-fragment-index="3">Type of entity</li>
+            <li class="fragment roll-in" data-fragment-index="4">ID of entity</li>
+            <li class="fragment roll-in" data-fragment-index="5">Sequence number within this entity</li>
           </ul>
         </section>
 

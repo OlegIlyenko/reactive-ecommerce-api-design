@@ -91,3 +91,11 @@ h2.smaller {
 body {
   /*background-color: #ffda88;*/
 }
+
+.good {
+  color: #1c6b2a;
+}
+
+.not-so-good {
+  color: #8b2e17;
+}
