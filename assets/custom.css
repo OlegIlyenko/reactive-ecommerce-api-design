@@ -8,9 +8,14 @@ img, .logo-image {
   background: none !important;
 }
 
-.reveal p, .reveal li, #credit {
+backquote, .reveal p, .reveal li, #credit {
   font-family: "museo" !important;
   font-weight: 300 !important;
+}
+
+backquote {
+  font-style: italic;
+  font-weight: 100 !important;
 }
 
 code {

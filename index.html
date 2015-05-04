@@ -122,12 +122,12 @@
           <ul>
             <li>Multiple read models</li>
             <li>
-              Precise and Flexible Write Model
+              Precise and flexible write model
             </li>
           </ul>
         </section>
 
-				<section class="image-section more-opaque"
+				<section class="image-section even-more-opaque"
                  data-background="assets/photos/cake.jpg"
                  data-credit="cake by Al Case"
                  data-image-link="https://www.flickr.com/photos/60035031@N06/16708820435">
@@ -137,7 +137,7 @@ POST /my-shop/orders
 {
   "customerId": "456",
   "lineItems": [
-    {"productId": "PRODUCT-1", "quantity": 3},
+    {"productId": "PRODUCT-1",  "quantity": 3},
     {"productId": "PRODUCT-25", "quantity": 2}
   ],
   ...
@@ -154,9 +154,9 @@ POST /my-shop/carts/CART-123
 
 {
   "actions": [
-    {"action": "addLineItem", "productId": "PRODUCT-1", "quantity": 5},
-    {"action": "removeLineItem", "productId": "PRODUCT-1", "quantity": 2},
-    {"action": "addLineItem", "productId": "PRODUCT-25", "quantity": 2}
+    {"action": "addLineItem",    "productId": "PRODUCT-1",  "quantity": 5},
+    {"action": "removeLineItem", "productId": "PRODUCT-1",  "quantity": 2},
+    {"action": "addLineItem",    "productId": "PRODUCT-25", "quantity": 2}
   ]
 }
 
@@ -241,15 +241,21 @@ POST /my-shop/orders
 
         <section>
           <h2>Transactional Boundary</h2>
-          <ul>
-            <li class="fragment roll-in" data-fragment-index="1">
-              Life beyond Distributed Transactions:
-              <ul><li><a href="http://bit.ly/LifeBeyondTxns" target="_blank">http://bit.ly/LifeBeyondTxns</a></li></ul>
-            </li>
-            <li class="fragment roll-in" data-fragment-index="2">
-              Transactional boundary - one concrete entity
-            </li>
-          </ul>
+
+          <backquote cite="http://bit.ly/LifeBeyondTxns">
+            “We will argue below why we conclude that atomic
+            transactions cannot span entities. The programmer
+            must always stick to the data contained inside a single
+            entity for each transaction. This restriction is true for
+            entities within the same application and for entities
+            within different applications.”
+          </backquote>
+
+          <div style="text-align: right; padding-top: 1em; font-size: 70%;">
+            Life beyond Distributed Transactions<br>
+            by Pat Helland<br>
+            <a href="http://bit.ly/LifeBeyondTxns" target="_blank">http://bit.ly/LifeBeyondTxns</a>
+          </div>
         </section>
 
         <section>
